@@ -26,11 +26,12 @@ Or by modifying and running the [python example](examples/send-udp.py)
 
 ## Development
 
-Install the Espressif toolchain: https://docs.espressif.com/projects/esp-idf/en/release-v4.1/
+Install the Espressif toolchain v. 4.1.2: https://dl.espressif.com/dl/esp-idf/
 
 Run menuconfig and ensure that:
-* bluetooth classic is enabled and BLE is disabled
-* the custom partition table partitions.csv is selected
+* bluetooth controller mode is set to BR/EDR Only from `Component config > Bluetooth > Bluetooth controller > Bluetooth controller mode`
+* bluetooth classic and SPP is enabled and BLE is disabled from `Component config > Bluetooth > Bluedroid options`
+* the custom partition table partitions.csv is selected from `Partition table > Partition table (Custom partition table CSV)`
 * at least 4MB flash size is selected from `Serial flasher config > Flash size`
 ```
     idf.py menuconfig
